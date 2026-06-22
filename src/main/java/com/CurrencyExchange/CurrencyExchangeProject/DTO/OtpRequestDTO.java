@@ -1,6 +1,5 @@
 package com.CurrencyExchange.CurrencyExchangeProject.DTO;
 
-
 import com.CurrencyExchange.CurrencyExchangeProject.Enums.OtpPurpose;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

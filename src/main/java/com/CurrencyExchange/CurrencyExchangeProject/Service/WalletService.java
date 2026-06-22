@@ -1,7 +1,6 @@
 package com.CurrencyExchange.CurrencyExchangeProject.Service;
 
 import com.CurrencyExchange.CurrencyExchangeProject.DTO.WalletResponseDTO;
-
 import com.CurrencyExchange.CurrencyExchangeProject.Enums.CurrencyCode;
 import org.springframework.security.core.Authentication;
 

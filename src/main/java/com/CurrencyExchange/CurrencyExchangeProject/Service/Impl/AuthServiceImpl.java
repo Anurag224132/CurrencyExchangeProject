@@ -1,9 +1,10 @@
 package com.CurrencyExchange.CurrencyExchangeProject.Service.Impl;
 
+
 import com.CurrencyExchange.CurrencyExchangeProject.DTO.ChangePasswordDTO;
-import com.CurrencyExchange.CurrencyExchangeProject.DTO.CreateUserDTO;
 import com.CurrencyExchange.CurrencyExchangeProject.DTO.ForgotPasswordDTO;
 import com.CurrencyExchange.CurrencyExchangeProject.DTO.LoginResponseDTO;
+import com.CurrencyExchange.CurrencyExchangeProject.DTO.CreateUserDTO;
 import com.CurrencyExchange.CurrencyExchangeProject.Entity.User;
 import com.CurrencyExchange.CurrencyExchangeProject.Enums.OtpPurpose;
 import com.CurrencyExchange.CurrencyExchangeProject.Exceptions.BadRequestException;
@@ -26,7 +27,8 @@ public class AuthServiceImpl implements AuthService {
 
     private static final int OTP_TTL_MIN = 5;
 
-    @Autowired private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
     @Autowired private JwtUtil jwtUtil;
     @Autowired private PasswordEncoder passwordEncoder;
     @Autowired private EmailService emailService;
@@ -101,10 +103,8 @@ public class AuthServiceImpl implements AuthService {
     public String changePassword(ChangePasswordDTO changePasswordDTO, Authentication authentication) {
 
         String email = authentication.getName();
-
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
-
         if (!passwordEncoder.matches(changePasswordDTO.getOldPassword(), user.getPassword())) {
             throw new BadRequestException("Old password is incorrect");
         }
