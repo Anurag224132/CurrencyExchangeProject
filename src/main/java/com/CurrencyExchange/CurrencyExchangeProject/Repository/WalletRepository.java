@@ -2,6 +2,7 @@ package com.CurrencyExchange.CurrencyExchangeProject.Repository;
 
 import com.CurrencyExchange.CurrencyExchangeProject.Entity.Wallet;
 import com.CurrencyExchange.CurrencyExchangeProject.Enums.CurrencyCode;
+import org.springframework.data.jpa.repository.JpaRepository;
 import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
