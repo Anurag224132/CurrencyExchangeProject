@@ -44,7 +44,7 @@ public class User {
 
     @Column(nullable = false)
     @Setter
-    private String password; //store in hashed form
+    private String password; 
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
